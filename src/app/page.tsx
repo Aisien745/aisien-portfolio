@@ -157,7 +157,7 @@ export default function Home() {
               title: "SciTrack — Academic Literature Monitoring",
               desc: "Developed a complete B2B platform integrating OpenAI to translate plain-English research topics into highly optimized boolean queries.",
               impact: "Scalable freemium architecture",
-              link: "https://scitrack.vercel.app"
+              link: "https://scitrack-mvp.vercel.app/"
             },
             {
               type: "Data Pipeline",
