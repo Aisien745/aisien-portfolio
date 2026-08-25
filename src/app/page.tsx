@@ -170,7 +170,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-6 mb-16">
             {/* Твоя реальная почта */}
             <a href="mailto:solovevaisien@gmail.com" className="px-6 py-3 bg-white border border-slate-200 text-slate-900 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition shadow-sm">
-              aisien.solovev@gmail.com
+              solovevaisien@gmail.com
             </a>
             <div className="px-6 py-3 bg-white border border-slate-200 text-slate-500 font-semibold rounded-xl shadow-sm">
               Brussels / Siena
