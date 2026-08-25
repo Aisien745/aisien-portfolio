@@ -168,7 +168,7 @@ export default function Home() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-16">
             {/* Твоя реальная почта */}
-            <a href="mailto:aisien.solovev@gmail.com" className="px-6 py-3 bg-white border border-slate-200 text-slate-900 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition shadow-sm">
+            <a href="mailto:solovevaisien@gmail.com" className="px-6 py-3 bg-white border border-slate-200 text-slate-900 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition shadow-sm">
               aisien.solovev@gmail.com
             </a>
             <div className="px-6 py-3 bg-white border border-slate-200 text-slate-500 font-semibold rounded-xl shadow-sm">
@@ -178,7 +178,7 @@ export default function Home() {
           
           <div className="flex justify-center gap-8 text-sm font-bold text-slate-400 uppercase tracking-wider">
             {/* Твой LinkedIn */}
-            <a href="https://linkedin.com/in/aisien-solovev" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition">
+            <a href="https://www.linkedin.com/in/solovevaisien/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition">
               LinkedIn
             </a>
             {/* Твой GitHub */}
