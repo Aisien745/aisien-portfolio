@@ -1,11 +1,11 @@
 "use client"; // Обязательно для Framer Motion в App Router
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 export default function Home() {
-  // Базовые настройки для плавного появления при скролле
-  const fadeUpVariant = {
+  // Базовые настройки для плавного появления при скролле с явным указанием типа Variants
+  const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
@@ -97,19 +97,22 @@ export default function Home() {
               {
                 title: "Macro & Finance",
                 desc: "Corporate Finance, Fundamental Valuation, Market Sizing, and Unit Economics.",
-                color: "blue",
+                bgClass: "bg-blue-100",
+                textClass: "text-blue-600",
                 icon: <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               },
               {
                 title: "Data Engineering",
                 desc: "Python (pandas), ETL automation, dynamic REST API integrations, and web scraping.",
-                color: "indigo",
+                bgClass: "bg-indigo-100",
+                textClass: "text-indigo-600",
                 icon: <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
               },
               {
                 title: "Product Development",
                 desc: "Full-stack SaaS MVPs using Next.js, Tailwind CSS, PostgreSQL, and LLM integrations.",
-                color: "teal",
+                bgClass: "bg-teal-100",
+                textClass: "text-teal-600",
                 icon: <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               }
             ].map((skill, index) => (
@@ -121,7 +124,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="p-8 rounded-3xl bg-[#FAFAFA] border border-slate-100 hover:shadow-lg hover:shadow-slate-200/50 transition duration-300"
               >
-                <div className={`w-12 h-12 bg-${skill.color}-100 text-${skill.color}-600 rounded-xl flex items-center justify-center mb-6`}>
+                <div className={`w-12 h-12 ${skill.bgClass} ${skill.textClass} rounded-xl flex items-center justify-center mb-6`}>
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">{skill.icon}</svg>
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{skill.title}</h3>
@@ -149,7 +152,8 @@ export default function Home() {
           {[
             {
               type: "SaaS MVP",
-              color: "blue",
+              textClass: "text-blue-600",
+              hoverClass: "group-hover:text-blue-600",
               title: "SciTrack — Academic Literature Monitoring",
               desc: "Developed a complete B2B platform integrating OpenAI to translate plain-English research topics into highly optimized boolean queries.",
               impact: "Scalable freemium architecture",
@@ -157,7 +161,8 @@ export default function Home() {
             },
             {
               type: "Data Pipeline",
-              color: "indigo",
+              textClass: "text-indigo-600",
+              hoverClass: "group-hover:text-indigo-600",
               title: "GLP-1 Therapeutics Market Sizing",
               desc: "Architected an automated data extraction and modeling pipeline querying international health databases (World Bank, WHO, openFDA).",
               impact: "Data-driven investment evaluation",
@@ -165,7 +170,8 @@ export default function Home() {
             },
             {
               type: "ETL Automation",
-              color: "teal",
+              textClass: "text-teal-600",
+              hoverClass: "group-hover:text-teal-600",
               title: "E-commerce Intelligence System",
               desc: "Designed a comprehensive ETL system to aggregate real-time pricing and competitor metrics across dynamic retail platforms using Python.",
               impact: "Optimized operational decisions",
@@ -184,8 +190,8 @@ export default function Home() {
               className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col h-full group"
             >
               <div className="flex justify-between items-start mb-4">
-                <div className={`text-xs font-bold text-${project.color}-600 uppercase tracking-wider`}>{project.type}</div>
-                <svg className={`w-5 h-5 text-slate-300 group-hover:text-${project.color}-600 transition`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                <div className={`text-xs font-bold ${project.textClass} uppercase tracking-wider`}>{project.type}</div>
+                <svg className={`w-5 h-5 text-slate-300 ${project.hoverClass} transition`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">{project.title}</h4>
               <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">{project.desc}</p>
@@ -238,7 +244,7 @@ export default function Home() {
         className="pb-16 pt-10 text-center px-6"
       >
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 mb-6">Let's build something impactful.</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 mb-6">Let&apos;s build something impactful.</h2>
           <p className="text-slate-500 font-medium mb-10">Currently seeking Junior Business Analyst and Public Policy internship opportunities.</p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-16">
