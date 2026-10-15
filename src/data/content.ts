@@ -53,12 +53,6 @@ export type Subject = {
 };
 
 export const subjects: Subject[] = [
-  { name: "Microeconomics", group: "Year 1", area: "Economics", blurb: "Consumer and firm behaviour, market structures, welfare.", takeaway: "Every business decision is a trade-off at the margin." },
-  { name: "Macroeconomics", group: "Year 1", area: "Economics", blurb: "Growth, inflation, monetary and fiscal policy.", takeaway: "Policy shapes the environment every firm operates in." },
-  { name: "Financial Accounting", group: "Year 1", area: "Finance", blurb: "Reading and building the three financial statements.", takeaway: "Accounting is the scoreboard; know how it is kept." },
-  { name: "Statistics", group: "Year 1", area: "Quantitative", blurb: "Probability, inference, hypothesis testing.", takeaway: "Numbers without uncertainty are just opinions." },
-  { name: "Corporate Finance", group: "Year 2", area: "Finance", blurb: "Valuation, capital structure, cost of capital.", takeaway: "Value is the present value of future cash flows." },
-
   // Erasmus at EPHEC: Innovative International Entrepreneurship (ENT11)
   { name: "Strategic Management", group: "Erasmus · EPHEC", area: "Management", code: "ERA108", ects: 5, blurb: "How firms build and sustain competitive advantage." }, // EDIT
   { name: "Business Case Studies Analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
