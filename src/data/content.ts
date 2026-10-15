@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // ALL SITE CONTENT LIVES HERE. Edit this file, the pages update.
-// Items marked "EDIT" are placeholders: replace with your real courses,
-// notes and results.
+// Items marked "EDIT" are placeholders: replace with your real notes
+// and results.
 // ─────────────────────────────────────────────────────────────
 
 export const profile = {
@@ -28,45 +28,57 @@ export const journey = [
   {
     year: "Year 2",
     title: "Tools",
-    text: "Econometrics, corporate finance and Python. Moving from theory to evidence: data, models, valuation.",
+    text: "Corporate finance and Python. Moving from theory to evidence: data, models, valuation.",
   },
   {
-    year: "Year 3",
-    title: "Application",
-    text: "Strategy, European economics and real projects. Turning frameworks into products, pipelines and recommendations.",
+    year: "Erasmus",
+    title: "Entrepreneurship",
+    text: "Exchange at EPHEC: strategy, financial planning, trendwatching and an international entrepreneurial project.",
   },
-]; // EDIT
-
-export const stats = [
-  { value: "3+", label: "Years of study" },
-  { value: "12", label: "Core subjects" },
-  { value: "3", label: "Business cases" },
-  { value: "C1", label: "English" },
 ]; // EDIT
 
 // ── Subjects ─────────────────────────────────────────────────
+// `group` decides the section on the Subjects page (groups appear in the
+// order they first show up in this list).
+// The chapters of each subject are Markdown files in
+//   content/subjects/<subject-name-in-lowercase-with-dashes>/
 export type Subject = {
   name: string;
-  year: 1 | 2 | 3;
-  area: "Economics" | "Finance" | "Management" | "Quantitative";
+  group: string;
+  area: "Economics" | "Finance" | "Management" | "Quantitative" | "Entrepreneurship";
   blurb: string;
-  takeaway: string;
+  takeaway?: string; // optional: one line you want to remember
+  code?: string;
+  ects?: number;
 };
 
 export const subjects: Subject[] = [
-  { name: "Microeconomics", year: 1, area: "Economics", blurb: "Consumer and firm behaviour, market structures, welfare.", takeaway: "Every business decision is a trade-off at the margin." },
-  { name: "Macroeconomics", year: 1, area: "Economics", blurb: "Growth, inflation, monetary and fiscal policy.", takeaway: "Policy shapes the environment every firm operates in." },
-  { name: "Financial Accounting", year: 1, area: "Finance", blurb: "Reading and building the three financial statements.", takeaway: "Accounting is the scoreboard; know how it is kept." },
-  { name: "Statistics", year: 1, area: "Quantitative", blurb: "Probability, inference, hypothesis testing.", takeaway: "Numbers without uncertainty are just opinions." },
-  { name: "Corporate Finance", year: 2, area: "Finance", blurb: "Valuation, capital structure, cost of capital.", takeaway: "Value is the present value of future cash flows." },
-  { name: "Econometrics", year: 2, area: "Quantitative", blurb: "Regression, causality, time series.", takeaway: "Correlation is cheap, identification is the work." },
-  { name: "Marketing", year: 2, area: "Management", blurb: "Segmentation, positioning, pricing.", takeaway: "Start with the customer problem, not the product." },
-  { name: "Operations Management", year: 2, area: "Management", blurb: "Process design, supply chains, bottlenecks.", takeaway: "The constraint sets the pace of the whole system." },
-  { name: "Corporate Strategy", year: 3, area: "Management", blurb: "Competitive advantage, industry analysis, M&A.", takeaway: "Strategy is choosing what not to do." },
-  { name: "European Economy", year: 3, area: "Economics", blurb: "Single market, EU institutions, trade and policy.", takeaway: "Integration creates both scale and friction." },
-  { name: "International Trade", year: 3, area: "Economics", blurb: "Comparative advantage, tariffs, global value chains.", takeaway: "Trade gains are real, but unevenly shared." },
-  { name: "Data Analytics (Python)", year: 3, area: "Quantitative", blurb: "pandas, APIs, ETL and visualisation.", takeaway: "Automate the boring part so you can think." },
-]; // EDIT
+  { name: "Microeconomics", group: "Year 1", area: "Economics", blurb: "Consumer and firm behaviour, market structures, welfare.", takeaway: "Every business decision is a trade-off at the margin." },
+  { name: "Macroeconomics", group: "Year 1", area: "Economics", blurb: "Growth, inflation, monetary and fiscal policy.", takeaway: "Policy shapes the environment every firm operates in." },
+  { name: "Financial Accounting", group: "Year 1", area: "Finance", blurb: "Reading and building the three financial statements.", takeaway: "Accounting is the scoreboard; know how it is kept." },
+  { name: "Statistics", group: "Year 1", area: "Quantitative", blurb: "Probability, inference, hypothesis testing.", takeaway: "Numbers without uncertainty are just opinions." },
+  { name: "Corporate Finance", group: "Year 2", area: "Finance", blurb: "Valuation, capital structure, cost of capital.", takeaway: "Value is the present value of future cash flows." },
+
+  // Erasmus at EPHEC: Innovative International Entrepreneurship (ENT11)
+  { name: "Strategic Management", group: "Erasmus · EPHEC", area: "Management", code: "ERA108", ects: 5, blurb: "How firms build and sustain competitive advantage." }, // EDIT
+  { name: "Business Case Studies Analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
+  { name: "Financial Plan", group: "Erasmus · EPHEC", area: "Finance", code: "ERA104", ects: 5, blurb: "Turning a business idea into numbers: forecasts, funding, viability." }, // EDIT
+  { name: "Trendwatching", group: "Erasmus · EPHEC", area: "Management", code: "ERA120", ects: 5, blurb: "Spotting the megatrends reshaping the world and what they mean for business." }, // EDIT
+  { name: "International Innovative Entrepreneurial Project", group: "Erasmus · EPHEC", area: "Entrepreneurship", code: "ERA116", ects: 10, blurb: "Building an international business project with a net positive societal impact." }, // EDIT
+];
+
+// Optional banner shown under a group title on the Subjects page.
+export const programs: Record<
+  string,
+  { title: string; code: string; ects: number; text: string }
+> = {
+  "Erasmus · EPHEC": {
+    title: "Innovative International Entrepreneurship",
+    code: "ENT11",
+    ects: 30,
+    text: "Four 5-ECTS modules build the theory (strategy, case analysis, financial planning, trendwatching) to prepare a 10-ECTS international entrepreneurial project.",
+  },
+};
 
 // ── Library ──────────────────────────────────────────────────
 export type Reading = {
@@ -146,3 +158,11 @@ export const cases: Case[] = [
     result: "Faster, evidence-based operational and pricing decisions.",
   },
 ]; // EDIT: replace with the real details and numbers
+
+// ── Home page stats (computed from the data above) ───────────
+export const stats = [
+  { value: "3+", label: "Years of study" },
+  { value: String(subjects.length), label: "Subjects" },
+  { value: String(cases.length), label: "Business cases" },
+  { value: "C1", label: "English" },
+];

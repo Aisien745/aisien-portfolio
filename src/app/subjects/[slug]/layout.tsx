@@ -22,6 +22,15 @@ export default async function SubjectLayout({
   if (!subject) notFound();
   const chapters = getChapters(slug);
 
+  const meta = [
+    subject.group,
+    subject.area,
+    subject.code,
+    subject.ects ? `${subject.ects} ECTS` : undefined,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
     <>
       <section className="bg-bain text-white">
@@ -29,10 +38,8 @@ export default async function SubjectLayout({
           <Link href="/subjects" className="text-sm font-semibold text-white/80 hover:text-white">
             ← All subjects
           </Link>
-          <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-white/80">
-            Year {subject.year} · {subject.area}
-          </p>
-          <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+          <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-white/80">{meta}</p>
+          <h1 className="mt-3 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
             {subject.name}
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-white/85">{subject.blurb}</p>
