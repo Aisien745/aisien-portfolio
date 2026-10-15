@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-border: var(--color-slate-200);
+  --color-bain: #cc0000;
+  --color-bain-dark: #a30000;
+  --color-bain-tint: #fdf0f0;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: #cc0000;
+  color: #fff;
 }
