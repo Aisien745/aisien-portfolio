@@ -126,7 +126,7 @@ export const cases: Case[] = [
   {
     slug: "swissone-vs-toblerone",
     type: "Market Entry",
-    title: "SwissOne vs. Toblerone",
+    title: "SwissOne",
     summary: "Analyzing market entry and brand positioning in the highly consolidated Swiss chocolate industry.",
     tags: ["FMCG", "Brand Strategy", "Market Share"],
     fileUrl: "/SwissOne.pdf",
