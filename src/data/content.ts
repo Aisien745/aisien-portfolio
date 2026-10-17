@@ -89,8 +89,8 @@ export const library: Reading[] = [
     title: "Monetary Policy, Inflation, and Crises: Evidence from History and Administrative Data", 
     author: "GABRIEL JIMÉNEZ, DMITRY KUVSHINOV, JOSÉ-LUIS PEYDRÓ, and BJÖRN RICHTER", 
     type: "Article", 
-    theme: "EU policy", 
-    note: "A blueprint for Europe's growth and investment gap.",
+    theme: "Monetary Policy & Financial Stability",
+    note: "How prolonged rate cuts followed by rate hikes can fuel credit booms and increase banking crisis risk.",
     fileUrl: "/monetary-policy.pdf",
   },
 ]; // EDIT: add what you actually read, and your own note
