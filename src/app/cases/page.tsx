@@ -11,7 +11,7 @@ export default function CasesPage() {
       <PageHeader
         eyebrow="Business Cases"
         title="Deconstructing strategy and data."
-        intro="My analytical breakdowns of business models, unit economics, and market sizing. Available to read online or download as PDF."
+        intro="My analytical breakdowns of cases"
       />
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
