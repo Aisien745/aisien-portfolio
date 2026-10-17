@@ -1,67 +1,67 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getMarkdownContent } from "@/lib/markdown";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { cases } from "@/data/content";
 
-export function generateStaticParams() {
-  return cases.map((c) => ({ slug: c.slug }));
-}
-
-export default async function CasePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
+export default async function CaseStudyPage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
 }) {
   const { slug } = await params;
-  const c = cases.find((x) => x.slug === slug);
-  if (!c) notFound();
+
+  // Ищем базовую информацию о кейсе в content.ts (для заголовков)
+  const caseData = cases.find(c => c.slug === slug);
+  
+  if (!caseData) {
+    notFound();
+  }
+
+  // Пытаемся найти Markdown файл с заметками
+  const markdownData = getMarkdownContent('cases', slug);
 
   return (
-    <article>
-      <section className="bg-bain text-white">
-        <div className="mx-auto max-w-4xl px-6 pb-16 pt-16 md:pb-20 md:pt-24">
-          <Link href="/cases" className="text-sm font-semibold text-white/80 hover:text-white">
-            ← All cases
-          </Link>
-          <p className="mt-10 text-xs font-bold uppercase tracking-[0.2em] text-white/80">{c.type}</p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">{c.title}</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85">{c.summary}</p>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {c.tags.map((t) => (
-              <span key={t} className="border border-white/50 px-2 py-1 text-[11px] font-bold uppercase tracking-wider">{t}</span>
-            ))}
-          </div>
+    <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans pt-32 pb-20 px-6">
+      <div className="max-w-3xl mx-auto">
+        
+        {/* Кнопка "Назад" */}
+        <Link href="/cases" className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-red-600 transition mb-12">
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+          Back to Cases
+        </Link>
+
+        {/* Заголовок из content.ts */}
+        <div className="mb-12">
+          <div className="text-xs font-bold text-red-600 uppercase tracking-wider mb-3">{caseData.type}</div>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
+            {caseData.title}
+          </h1>
+          <p className="text-xl text-slate-500 leading-relaxed">
+            {caseData.summary}
+          </p>
         </div>
-      </section>
 
-      <div className="mx-auto max-w-4xl space-y-16 px-6 py-20">
-        <section>
-          <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-bain">01 · Context</h2>
-          <p className="text-xl leading-relaxed text-neutral-800">{c.context}</p>
-        </section>
+        {/* Разделитель */}
+        <hr className="border-slate-200 mb-12" />
 
-        <section>
-          <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-bain">02 · Approach</h2>
-          <ol className="space-y-4">
-            {c.approach.map((a, i) => (
-              <li key={a} className="flex gap-5 border-b border-neutral-200 pb-4">
-                <span className="text-2xl font-extrabold tracking-tighter text-bain">{i + 1}</span>
-                <span className="pt-1 text-neutral-800">{a}</span>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className="border-l-4 border-bain bg-bain-tint p-8">
-          <h2 className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-bain">03 · Result</h2>
-          <p className="text-xl font-semibold leading-relaxed">{c.result}</p>
-        </section>
-
-        {c.link && (
-          <a href={c.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-bain px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-bain-dark">
-            View project ↗
-          </a>
+        {/* Рендерим Markdown, если он есть */}
+        {markdownData ? (
+          <div className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-red-600 hover:prose-a:text-red-700">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {markdownData.content}
+            </ReactMarkdown>
+          </div>
+        ) : (
+          <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+            <p className="text-slate-500 font-medium">
+              Detailed notes for this case study are currently being written. Check back later!
+            </p>
+          </div>
         )}
+
       </div>
-    </article>
+    </div>
   );
 }
