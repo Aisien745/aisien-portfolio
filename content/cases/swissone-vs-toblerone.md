@@ -5,8 +5,11 @@ summary: "My notes and framework breakdown for the SwissOne."
 
 ## Main Problems
 
-- **Tesla's Moat:** Brand premium and software ecosystem.
-- **BYD's Advantage:** Vertical integration (they make their own batteries) and aggressive pricing.
+- **Retail and Distribution Bottleneck:** market is dominated by retail duopoly, which dictates what consumers can buy.
+    - Within Switzerland, supermarkets were the primary sales channel for chocolate; two of the country's largest supermarkets, Migros and Coop, commanded 70 per cent of the market share for chocolate sales and thus had significant control over the product options available to buyers.
+- **Monopolized market:** 
+    - Over half of Switzerland's chocolate market share belonged to just six companies: Mars, Mondelez International, Nestlé, Ferrero, The Hershey Company, and Lindt & Sprüngli
+    - While multinational brands ruled about 95 per cent of the chocolate market, 80 to 85 per cent of the market share belonged to the low-end chocolate segment
 
 - 
 
