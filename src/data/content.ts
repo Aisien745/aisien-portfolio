@@ -104,9 +104,6 @@ export type Case = {
   tags: string[];
   link?: string;
   fileUrl?: string;
-  context: string;
-  approach: string[];
-  result: string;
 };
 
 export const cases: Case[] = [
@@ -117,13 +114,6 @@ export const cases: Case[] = [
     summary: "Analyzing competitive advantages and market share dynamics in the world's largest electric vehicle market.",
     tags: ["Automotive", "Competitive Strategy", "EV"],
     fileUrl: "/BYD.pdf",
-    context: "Tesla and BYD are competing fiercely in the Chinese EV market, driven by government support, charging infrastructure, and shifting consumer preferences.",
-    approach: [
-      "Compared product strategies between pure BEVs (Tesla) and hybrids (BYD).",
-      "Analyzed market share, pricing dynamics, and cost structures in China.",
-      "Evaluated the impact of government joint ventures and subsidies on competitive moats.",
-    ],
-    result: "A strategic breakdown of competitive advantages and scaling challenges in a hyper-competitive market.",
   },
   {
     slug: "hatley-global-expansion",
@@ -132,13 +122,6 @@ export const cases: Case[] = [
     summary: "Evaluating international growth strategies and post-Brexit adaptation for an apparel brand.",
     tags: ["Retail", "Global Expansion", "E-commerce"],
     fileUrl: "/Hatley.pdf",
-    context: "Hatley faces growth challenges in the children's apparel market, navigating post-Brexit realities in the UK while refocusing on the US and Canadian markets.",
-    approach: [
-      "Analyzed distribution channels across e-commerce, retail, and wholesale.",
-      "Assessed sustainability practices in the fashion industry as a competitive edge.",
-      "Evaluated market dynamics and key players in North America.",
-    ],
-    result: "Strategic recommendations for sustainable growth and adapting to changing international trade environments.",
   },
   {
     slug: "swissone-vs-toblerone",
@@ -147,13 +130,6 @@ export const cases: Case[] = [
     summary: "Analyzing market entry and brand positioning in the highly consolidated Swiss chocolate industry.",
     tags: ["FMCG", "Brand Strategy", "Market Share"],
     fileUrl: "/SwissOne.pdf",
-    context: "SwissOne is entering a domestic market dominated by legacy brands like Toblerone and Mars, facing risks in cacao sourcing and intense competition.",
-    approach: [
-      "Analyzed the Swiss chocolate industry structure and competitor market shares.",
-      "Evaluated product portfolio positioning and eco-friendly packaging strategies.",
-      "Assessed sourcing risks and supply chain sustainability.",
-    ],
-    result: "A strategic market entry evaluation focusing on sustainable differentiation against established market leaders.",
   },
   {
     slug: "marlfield-house",
@@ -161,14 +137,7 @@ export const cases: Case[] = [
     title: "Marlfield House Crossroads",
     summary: "Navigating succession, digital transformation, and staff retention at a luxury historic hotel.",
     tags: ["Hospitality", "Digital Strategy", "Operations"],
-    fileUrl: "/MarlfieldHouse.pdf", // Убедись, что переименовал файл в public/marlfield.pdf
-    context: "Marlfield House, an Irish aristocratic estate turned luxury hotel, is undergoing generational succession while facing high staff turnover and digital marketing challenges.",
-    approach: [
-      "Analyzed the impact of high staff turnover on operational costs and training.",
-      "Evaluated digital marketing investments (Google Ads, Meta, Mailchimp).",
-      "Assessed the balance between preserving historical legacy and modernizing the guest experience.",
-    ],
-    result: "An operational roadmap for succession planning, improving retention, and optimizing digital ROI.",
+    fileUrl: "/MarlfieldHouse.pdf", 
   }
 ];
 
