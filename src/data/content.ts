@@ -78,18 +78,21 @@ export const programs: Record<
 export type Reading = {
   title: string;
   author: string;
-  type: "Book" | "Paper" | "Report";
+  type: "Book" | "Paper" | "Report" | "Article"  ;
   theme: string;
   note: string;
+  fileUrl?: string;
 };
 
 export const library: Reading[] = [
-  { title: "Good Strategy / Bad Strategy", author: "Richard Rumelt", type: "Book", theme: "Strategy", note: "A strategy is a diagnosis, a guiding policy and coherent actions." },
-  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", type: "Book", theme: "Behavioural", note: "Why real decision-makers deviate from the rational model." },
-  { title: "Poor Economics", author: "Abhijit Banerjee & Esther Duflo", type: "Book", theme: "Development", note: "Evidence-based thinking applied to how people actually live." },
-  { title: "Capital in the Twenty-First Century", author: "Thomas Piketty", type: "Book", theme: "Macro", note: "Long-run data on wealth, income and inequality." },
-  { title: "Misbehaving", author: "Richard Thaler", type: "Book", theme: "Behavioural", note: "How behavioural economics changed the discipline." },
-  { title: "The Future of European Competitiveness", author: "Mario Draghi", type: "Report", theme: "EU policy", note: "A blueprint for Europe's growth and investment gap." },
+  { 
+    title: "Monetary Policy, Inflation, and Crises: Evidence from History and Administrative Data", 
+    author: "GABRIEL JIMÉNEZ, DMITRY KUVSHINOV, JOSÉ-LUIS PEYDRÓ, and BJÖRN RICHTER", 
+    type: "Article", 
+    theme: "EU policy", 
+    note: "A blueprint for Europe's growth and investment gap.",
+    fileUrl: "/monetary-policy.pdf",
+  },
 ]; // EDIT: add what you actually read, and your own note
 
 // ── Business cases ───────────────────────────────────────────
