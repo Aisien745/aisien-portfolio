@@ -161,7 +161,7 @@ export const cases: Case[] = [
     title: "Marlfield House Crossroads",
     summary: "Navigating succession, digital transformation, and staff retention at a luxury historic hotel.",
     tags: ["Hospitality", "Digital Strategy", "Operations"],
-    fileUrl: "/marlfield.pdf", // Убедись, что переименовал файл в public/marlfield.pdf
+    fileUrl: "/MarlfieldHouse.pdf", // Убедись, что переименовал файл в public/marlfield.pdf
     context: "Marlfield House, an Irish aristocratic estate turned luxury hotel, is undergoing generational succession while facing high staff turnover and digital marketing challenges.",
     approach: [
       "Analyzed the impact of high staff turnover on operational costs and training.",
