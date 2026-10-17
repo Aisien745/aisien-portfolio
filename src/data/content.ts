@@ -103,6 +103,7 @@ export type Case = {
   summary: string;
   tags: string[];
   link?: string;
+  fileUrl?: string;
   context: string;
   approach: string[];
   result: string;
@@ -110,51 +111,66 @@ export type Case = {
 
 export const cases: Case[] = [
   {
-    slug: "scitrack",
-    type: "SaaS MVP",
-    title: "SciTrack: Academic Literature Monitoring",
-    summary: "A B2B platform that turns plain-English research topics into optimised boolean queries with OpenAI.",
-    tags: ["Next.js", "OpenAI API", "Tailwind", "PostgreSQL"],
-    link: "https://scitrack-mvp.vercel.app/",
-    context: "Researchers lose hours writing boolean search queries and still miss relevant papers. The question: can an LLM lower that barrier and become a paid product?",
+    slug: "tesla-vs-byd",
+    type: "Market Strategy",
+    title: "Tesla vs. BYD: China's EV Contest",
+    summary: "Analyzing competitive advantages and market share dynamics in the world's largest electric vehicle market.",
+    tags: ["Automotive", "Competitive Strategy", "EV"],
+    fileUrl: "/BYD.pdf",
+    context: "Tesla and BYD are competing fiercely in the Chinese EV market, driven by government support, charging infrastructure, and shifting consumer preferences.",
     approach: [
-      "Defined the user and the pain point, then sized the niche.",
-      "Built the MVP full-stack: query generation, monitoring, alerts.",
-      "Designed a freemium model with usage-based limits.",
+      "Compared product strategies between pure BEVs (Tesla) and hybrids (BYD).",
+      "Analyzed market share, pricing dynamics, and cost structures in China.",
+      "Evaluated the impact of government joint ventures and subsidies on competitive moats.",
     ],
-    result: "A working, deployed MVP with a scalable freemium architecture.",
+    result: "A strategic breakdown of competitive advantages and scaling challenges in a hyper-competitive market.",
   },
   {
-    slug: "glp1",
-    type: "Market Sizing",
-    title: "GLP-1 Therapeutics Market Sizing",
-    summary: "An automated pipeline pulling World Bank, WHO and openFDA data to size an investment opportunity.",
-    tags: ["Python", "pandas", "REST APIs"],
-    link: "https://github.com/aysiens",
-    context: "GLP-1 drugs are reshaping the obesity and diabetes market. How large could it get, and where?",
+    slug: "hatley-global-expansion",
+    type: "Growth Strategy",
+    title: "Hatley: Global Expansion",
+    summary: "Evaluating international growth strategies and post-Brexit adaptation for an apparel brand.",
+    tags: ["Retail", "Global Expansion", "E-commerce"],
+    fileUrl: "/Hatley.pdf",
+    context: "Hatley faces growth challenges in the children's apparel market, navigating post-Brexit realities in the UK while refocusing on the US and Canadian markets.",
     approach: [
-      "Pulled prevalence, demographic and approval data through public APIs.",
-      "Built a bottom-up model: population, prevalence, treatment rate, price.",
-      "Stress-tested the assumptions with scenarios.",
+      "Analyzed distribution channels across e-commerce, retail, and wholesale.",
+      "Assessed sustainability practices in the fashion industry as a competitive edge.",
+      "Evaluated market dynamics and key players in North America.",
     ],
-    result: "A repeatable, data-driven view that supports investment evaluation.",
+    result: "Strategic recommendations for sustainable growth and adapting to changing international trade environments.",
   },
   {
-    slug: "ecommerce",
-    type: "ETL Automation",
-    title: "E-commerce Intelligence System",
-    summary: "An ETL system tracking real-time pricing and competitor metrics across retail platforms.",
-    tags: ["Python", "Web scraping", "ETL"],
-    link: "https://github.com/aysiens",
-    context: "Pricing decisions in retail are only as good as the competitive data behind them.",
+    slug: "swissone-vs-toblerone",
+    type: "Market Entry",
+    title: "SwissOne vs. Toblerone",
+    summary: "Analyzing market entry and brand positioning in the highly consolidated Swiss chocolate industry.",
+    tags: ["FMCG", "Brand Strategy", "Market Share"],
+    fileUrl: "/SwissOne.pdf",
+    context: "SwissOne is entering a domestic market dominated by legacy brands like Toblerone and Mars, facing risks in cacao sourcing and intense competition.",
     approach: [
-      "Scraped and normalised prices across dynamic platforms.",
-      "Scheduled the pipeline and stored a clean history.",
-      "Surfaced price gaps and trends for decisions.",
+      "Analyzed the Swiss chocolate industry structure and competitor market shares.",
+      "Evaluated product portfolio positioning and eco-friendly packaging strategies.",
+      "Assessed sourcing risks and supply chain sustainability.",
     ],
-    result: "Faster, evidence-based operational and pricing decisions.",
+    result: "A strategic market entry evaluation focusing on sustainable differentiation against established market leaders.",
   },
-]; // EDIT: replace with the real details and numbers
+  {
+    slug: "marlfield-house",
+    type: "Operations & Succession",
+    title: "Marlfield House Crossroads",
+    summary: "Navigating succession, digital transformation, and staff retention at a luxury historic hotel.",
+    tags: ["Hospitality", "Digital Strategy", "Operations"],
+    fileUrl: "/marlfield.pdf", // Убедись, что переименовал файл в public/marlfield.pdf
+    context: "Marlfield House, an Irish aristocratic estate turned luxury hotel, is undergoing generational succession while facing high staff turnover and digital marketing challenges.",
+    approach: [
+      "Analyzed the impact of high staff turnover on operational costs and training.",
+      "Evaluated digital marketing investments (Google Ads, Meta, Mailchimp).",
+      "Assessed the balance between preserving historical legacy and modernizing the guest experience.",
+    ],
+    result: "An operational roadmap for succession planning, improving retention, and optimizing digital ROI.",
+  }
+];
 
 // ── Home page stats (computed from the data above) ───────────
 export const stats = [
