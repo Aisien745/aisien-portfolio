@@ -88,10 +88,18 @@ export const library: Reading[] = [
   { 
     title: "Monetary Policy, Inflation, and Crises: Evidence from History and Administrative Data", 
     author: "GABRIEL JIMÉNEZ, DMITRY KUVSHINOV, JOSÉ-LUIS PEYDRÓ, and BJÖRN RICHTER", 
-    type: "Article", 
+    type: "Paper", 
     theme: "Monetary Policy & Financial Stability",
     note: "How prolonged rate cuts followed by rate hikes can fuel credit booms and increase banking crisis risk.",
     fileUrl: "/monetary-policy.pdf",
+  },
+  { 
+    title: "Consequences and Challenges of the Fourth Industrial Revolution and the Impact on the Development of Employability Skills", 
+    author: "Veronika Bikse, VERONIKA BIKSE, Liva Grinevica , Baiba Rivza, and Peteris Rivza", 
+    type: "Paper", 
+    theme: "Sustainability",
+    note: "Collaboration between educational institutions and entrepreneurs",
+    fileUrl: "/Industrial.pdf",
   },
 ]; // EDIT: add what you actually read, and your own note
 
