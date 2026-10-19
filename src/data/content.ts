@@ -95,11 +95,19 @@ export const library: Reading[] = [
   },
   { 
     title: "Consequences and Challenges of the Fourth Industrial Revolution and the Impact on the Development of Employability Skills", 
-    author: "Veronika Bikse, VERONIKA BIKSE, Liva Grinevica , Baiba Rivza, and Peteris Rivza", 
+    author: "Veronika Bikse, Veronika Bikse, Liva Grinevica , Baiba Rivza, and Peteris Rivza", 
     type: "Paper", 
     theme: "Sustainability",
     note: "Collaboration between educational institutions and entrepreneurs",
     fileUrl: "/Industrial.pdf",
+  },
+  { 
+    title: "Economic Security and the Transformation of European Union Economic Governance: Industrial Policy, Competitiveness, and Strategic Resilience", 
+    author: "Radoslav Ivanncík and Jirí Dušek", 
+    type: "Paper", 
+    theme: "Economics",
+    note: "In conditions of increasing geopolitical uncertainty, openness alone is no longer sufficient to ensure prosperity.",
+    fileUrl: "/EconomicSecurity.pdf",
   },
 ]; // EDIT: add what you actually read, and your own note
 
