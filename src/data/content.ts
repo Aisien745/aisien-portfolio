@@ -155,6 +155,14 @@ export const cases: Case[] = [
     tags: ["Hospitality", "Digital Strategy", "Operations"],
     fileUrl: "/MarlfieldHouse.pdf", 
   }
+  {
+    slug: "Latam",
+    type: "Market Entry & Strategy",
+    title: "Arla Foods: Building a 'Milky Way' to Latin America",
+    summary: "Choosing an entry and growth strategy in LATAM for a Danish dairy cooperative, balancing premium and low-income consumers, local partnerships, and rapid market consolidation.",
+    tags: ["Market Entry", "Emerging Markets", "Strategy"],
+    fileUrl: "/Latam.pdf",
+  }
 ];
 
 // ── Home page stats (computed from the data above) ───────────
