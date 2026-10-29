@@ -154,7 +154,7 @@ export const cases: Case[] = [
     summary: "Navigating succession, digital transformation, and staff retention at a luxury historic hotel.",
     tags: ["Hospitality", "Digital Strategy", "Operations"],
     fileUrl: "/MarlfieldHouse.pdf", 
-  }
+  },
   {
     slug: "Latam",
     type: "Market Entry & Strategy",
