@@ -113,6 +113,15 @@ export const library: Reading[] = [
     note: "In conditions of increasing geopolitical uncertainty, openness alone is no longer sufficient to ensure prosperity.",
     fileUrl: "/EconomicSecurity.pdf",
   },
+{
+    slug: "industrial-economics",
+    title: "Introduction to Industrial Organization",
+    author: "Luis M. B. Cabral",
+    type: "Book",
+    theme: "Industrial economics",
+    note: "Amid shifting geopolitical landscapes, market openness alone is insufficient; understanding imperfect competition, strategic firm behavior, and the balance between antitrust, regulation, and industrial policy is essential to securing economic prosperity",
+    fileUrl: "/Industrial_Economics.pdf",
+  },
 ]; // EDIT: add what you actually read, and your own note
 
 // ── Business cases ───────────────────────────────────────────
