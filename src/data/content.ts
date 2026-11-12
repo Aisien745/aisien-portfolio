@@ -76,36 +76,40 @@ export const programs: Record<
 
 // ── Library ──────────────────────────────────────────────────
 export type Reading = {
+  slug: string;
   title: string;
   author: string;
-  type: "Book" | "Paper" | "Report" | "Article"  ;
+  type: "Book" | "Paper" | "Report" | "Article";
   theme: string;
   note: string;
   fileUrl?: string;
 };
 
 export const library: Reading[] = [
-  { 
-    title: "Monetary Policy, Inflation, and Crises: Evidence from History and Administrative Data", 
-    author: "GABRIEL JIMÉNEZ, DMITRY KUVSHINOV, JOSÉ-LUIS PEYDRÓ, and BJÖRN RICHTER", 
-    type: "Paper", 
+  {
+    slug: "monetary-policy-inflation-crises",
+    title: "Monetary Policy, Inflation, and Crises: Evidence from History and Administrative Data",
+    author: "Gabriel Jiménez, Dmitry Kuvshinov, José-Luis Peydró, and Björn Richter",
+    type: "Paper",
     theme: "Monetary Policy & Financial Stability",
     note: "How prolonged rate cuts followed by rate hikes can fuel credit booms and increase banking crisis risk.",
     fileUrl: "/monetary-policy.pdf",
   },
-  { 
-    title: "Consequences and Challenges of the Fourth Industrial Revolution and the Impact on the Development of Employability Skills", 
-    author: "Veronika Bikse, Veronika Bikse, Liva Grinevica , Baiba Rivza, and Peteris Rivza", 
-    type: "Paper", 
-    theme: "Sustainability",
-    note: "Collaboration between educational institutions and entrepreneurs",
+  {
+    slug: "fourth-industrial-revolution-employability",
+    title: "Consequences and Challenges of the Fourth Industrial Revolution and the Impact on the Development of Employability Skills",
+    author: "Veronika Bikse, Liva Grinevica, Baiba Rivza, and Peteris Rivza",
+    type: "Paper",
+    theme: "Labor & Future of Work",
+    note: "Why traditional degrees fall short and how university–business collaboration drives youth employability.",
     fileUrl: "/Industrial.pdf",
   },
-  { 
-    title: "Economic Security and the Transformation of European Union Economic Governance: Industrial Policy, Competitiveness, and Strategic Resilience", 
-    author: "Radoslav Ivanncík and Jirí Dušek", 
-    type: "Paper", 
-    theme: "Economics",
+  {
+    slug: "eu-economic-security-governance",
+    title: "Economic Security and the Transformation of European Union Economic Governance: Industrial Policy, Competitiveness, and Strategic Resilience",
+    author: "Radoslav Ivančík and Jiří Dušek",
+    type: "Paper",
+    theme: "EU Policy & Macroeconomics",
     note: "In conditions of increasing geopolitical uncertainty, openness alone is no longer sufficient to ensure prosperity.",
     fileUrl: "/EconomicSecurity.pdf",
   },
