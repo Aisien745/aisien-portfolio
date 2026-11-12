@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { library } from "@/data/content";
@@ -11,16 +14,8 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const item = library.find((p) => p.slug === slug);
-
-  if (!item) {
-    return {
-      title: "Not Found",
-    };
-  }
-
-  return {
-    title: `${item.title} | Library`,
-  };
+  if (!item) return { title: "Not Found" };
+  return { title: `${item.title} | Library` };
 }
 
 export default async function LibraryItemPage({ params }: PageProps) {
@@ -31,9 +26,21 @@ export default async function LibraryItemPage({ params }: PageProps) {
     notFound();
   }
 
+  // Читаем соответствующий .md файл из папки content/library
+  let markdownContent = "";
+  try {
+    const filePath = path.join(process.cwd(), "content", "library", `${slug}.md`);
+    if (fs.existsSync(filePath)) {
+      const fileFile = fs.readFileSync(filePath, "utf8");
+      const parsed = matter(fileFile);
+      markdownContent = parsed.content;
+    }
+  } catch (e) {
+    console.error("Error reading markdown file:", e);
+  }
+
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
-      {/* Кнопка возврата */}
       <div className="mb-8">
         <Link
           href="/library"
@@ -62,12 +69,9 @@ export default async function LibraryItemPage({ params }: PageProps) {
         </p>
       </header>
 
-      {/* Основной контент заметки / статьи */}
-      <div className="prose prose-neutral max-w-none space-y-6 text-neutral-800 leading-relaxed">
-        <p className="text-lg font-medium text-neutral-700">{item.note}</p>
-        
-        {/* Здесь можно вывести полный текст, если он у тебя есть в объекте item, 
-            либо если статьи хранятся в отдельных markdown-файлах */}
+      {/* Вывод текста заметки */}
+      <div className="prose prose-neutral max-w-none space-y-4 text-neutral-800 leading-relaxed whitespace-pre-line">
+        {markdownContent || item.note}
       </div>
 
       {item.fileUrl && (
