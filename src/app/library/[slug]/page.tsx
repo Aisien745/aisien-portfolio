@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { marked } from "marked";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { library } from "@/data/content";
@@ -26,14 +27,14 @@ export default async function LibraryItemPage({ params }: PageProps) {
     notFound();
   }
 
-  // Читаем соответствующий .md файл из папки content/library
-  let markdownContent = "";
+  let htmlContent = "";
   try {
     const filePath = path.join(process.cwd(), "content", "library", `${slug}.md`);
     if (fs.existsSync(filePath)) {
       const fileFile = fs.readFileSync(filePath, "utf8");
       const parsed = matter(fileFile);
-      markdownContent = parsed.content;
+      // Конвертируем markdown в HTML
+      htmlContent = await marked(parsed.content);
     }
   } catch (e) {
     console.error("Error reading markdown file:", e);
@@ -69,16 +70,19 @@ export default async function LibraryItemPage({ params }: PageProps) {
         </p>
       </header>
 
-      {/* Вывод текста заметки */}
-      <div className="prose prose-neutral max-w-none space-y-4 text-neutral-800 leading-relaxed whitespace-pre-line">
-        {markdownContent || item.note}
-      </div>
+      {/* Рендеринг HTML с поддержкой стилей Tailwind Typography (prose) */}
+      <div 
+        className="prose prose-neutral max-w-none space-y-4 text-neutral-800 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: htmlContent || `<p>${item.note}</p>` }}
+      />
 
       {item.fileUrl && (
         <div className="mt-12 pt-8 border-t border-neutral-200">
           <a
             href={item.fileUrl}
             download
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-300 text-sm font-semibold text-neutral-700 transition hover:border-red-600 hover:text-red-600 hover:bg-red-50"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
