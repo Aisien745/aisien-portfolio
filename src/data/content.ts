@@ -93,7 +93,7 @@ export const library: Reading[] = [
     type: "Paper",
     theme: "Monetary Policy & Financial Stability",
     note: "How prolonged rate cuts followed by rate hikes can fuel credit booms and increase banking crisis risk.",
-    fileUrl: "/monetary-policy.pdf",
+    fileUrl: "/monetary_policy.pdf",
   },
   {
     slug: "fourth-industrial-revolution-employability",
@@ -104,7 +104,7 @@ export const library: Reading[] = [
     note: "Why traditional degrees fall short and how university–business collaboration drives youth employability.",
     fileUrl: "/Industrial.pdf",
   },
-  {
+{
     slug: "eu-economic-security-governance",
     title: "Economic Security and the Transformation of European Union Economic Governance: Industrial Policy, Competitiveness, and Strategic Resilience",
     author: "Radoslav Ivančík and Jiří Dušek",
