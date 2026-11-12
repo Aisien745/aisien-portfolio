@@ -1,59 +1,73 @@
-import PageHeader from "@/components/PageHeader";
-import Reveal from "@/components/Reveal";
+import Link from "next/link";
 import { library } from "@/data/content";
 
-export const metadata = { title: "Library | Aisien Solovev" };
+export const metadata = {
+  title: "Library",
+};
 
 export default function LibraryPage() {
   return (
-    <>
-      <PageHeader
-        eyebrow="Library"
-        title="The reading behind the thinking."
-        intro="Books, papers and reports that shaped how I approach economics and management, each with a one-line note. Click to download where available."
-      />
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <ul className="divide-y divide-neutral-200 border-y border-neutral-200">
-          {library.map((r, i) => (
-            <Reveal key={r.title} delay={i * 0.05}>
-              <li className="grid gap-4 py-8 md:grid-cols-[80px_1fr_180px] md:items-baseline">
-                <span className="text-3xl font-extrabold tracking-tighter text-bain">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                
-                {/* Средняя колонка: Заголовок, автор, описание и опциональная кнопка скачивания */}
-                <div>
-                  <div className="flex items-center gap-3">
-                    <h3 className="text-xl font-extrabold tracking-tight">{r.title}</h3>
-                    {r.fileUrl && (
-                      <a 
-                        href={r.fileUrl} 
-                        download 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-600 transition-colors"
-                        title={`Download ${r.title}`}
-                      >
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                      </a>
-                    )}
-                  </div>
-                  <p className="mt-1 text-sm font-semibold text-neutral-500">{r.author}</p>
-                  <p className="mt-3 max-w-xl leading-relaxed text-neutral-700">{r.note}</p>
-                </div>
+    <main className="mx-auto max-w-3xl px-6 py-16">
+      <header className="mb-12 border-b border-neutral-200 pb-8">
+        <h1 className="text-3xl font-bold tracking-tight text-neutral-900">
+          Library
+        </h1>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-neutral-600">
+          A collection of papers, books, and articles I have read and broken down.
+        </p>
+      </header>
 
-                {/* Правая колонка: Теги */}
-                <div className="flex gap-2 md:flex-col md:items-end mt-4 md:mt-0">
-                  <span className="bg-bain px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white">{r.type}</span>
-                  <span className="border border-neutral-300 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-neutral-600">{r.theme}</span>
-                </div>
-              </li>
-            </Reveal>
-          ))}
-        </ul>
+      <div className="flex flex-col">
+        {library.map((item, idx) => (
+          <div
+            key={item.slug}
+            className="group flex items-start justify-between gap-6 border-b border-neutral-200 py-8"
+          >
+            {/* Left: Number + Clickable Title & Note */}
+            <div className="flex items-start gap-8">
+              <span className="text-2xl font-bold text-red-600">
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+
+              <Link href={`/library/${item.slug}`} className="block space-y-2">
+                <h2 className="text-xl font-bold text-neutral-900 transition-colors group-hover:text-red-600">
+                  {item.title}
+                </h2>
+                <p className="text-xs font-medium uppercase tracking-wider text-neutral-500">
+                  {item.author}
+                </p>
+                <p className="max-w-2xl text-sm text-neutral-700">{item.note}</p>
+                <span className="inline-block pt-1 text-xs font-semibold uppercase tracking-wider text-red-600">
+                  Read notes →
+                </span>
+              </Link>
+            </div>
+
+            {/* Right: Direct PDF Download + Type/Theme Badges */}
+            <div className="flex shrink-0 items-start gap-4">
+              {item.fileUrl && (
+                <a
+                  href={item.fileUrl}
+                  download
+                  aria-label={`Download ${item.title} PDF`}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition hover:border-red-600 hover:text-red-600"
+                >
+                  ↓
+                </a>
+              )}
+
+              <div className="flex flex-col items-end gap-2">
+                <span className="bg-red-600 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
+                  {item.type}
+                </span>
+                <span className="border border-neutral-300 px-2.5 py-1 text-right text-[11px] font-semibold uppercase tracking-wider text-neutral-700">
+                  {item.theme}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </>
+    </main>
   );
 }
