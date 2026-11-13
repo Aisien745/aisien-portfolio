@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ChapterTabs from "@/components/ChapterTabs";
-import { subjects } from "@/data/content";
+import { projects } from "@/data/content";
 import { getChapters, slugify, subjectBySlug } from "@/lib/projects";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return subjects.map((s) => ({ slug: slugify(s.name) }));
+  return projects.map((s) => ({ slug: slugify(s.name) }));
 }
 
 export default async function SubjectLayout({
