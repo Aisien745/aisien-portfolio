@@ -1,10 +1,10 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import { programs, projects, type Subject } from "@/data/content";
+import { programs, projects, type Project } from "@/data/content";
 import { getChapters, slugify } from "@/lib/projects";
 
-const groups = Array.from(new Set(projects.map((p: Subject) => p.group)));
+const groups = Array.from(new Set(projects.map((p: Project) => p.group)));
 
 export const metadata = { title: "Projects | Aisien Solovev" };
 
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
                 )}
               </Reveal>
               <div className="grid gap-6 md:grid-cols-2">
-                {projects.filter((p: Subject) => p.group === g).map((p: Subject, i: number) => {
+                {projects.filter((p: Project) => p.group === g).map((p: Project, i: number) => {
                   const slug = slugify(p.name);
                   const count = getChapters(slug).length;
                   return (

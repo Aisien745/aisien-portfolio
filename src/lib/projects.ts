@@ -17,9 +17,9 @@ const SAFE = /^[a-z0-9_-]+$/i;
 
 export type Chapter = { slug: string; title: string };
 
-export function getChapters(subjectSlug: string): Chapter[] {
-  if (!SAFE.test(subjectSlug)) return [];
-  const dir = path.join(ROOT, subjectSlug);
+export function getChapters(projectSlug: string): Chapter[] {
+  if (!SAFE.test(projectSlug)) return [];
+  const dir = path.join(ROOT, projectSlug);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
@@ -32,9 +32,9 @@ export function getChapters(subjectSlug: string): Chapter[] {
     });
 }
 
-export function getChapter(subjectSlug: string, chapterSlug: string) {
-  if (!SAFE.test(subjectSlug) || !SAFE.test(chapterSlug)) return null;
-  const file = path.join(ROOT, subjectSlug, `${chapterSlug}.md`);
+export function getChapter(projectSlug: string, chapterSlug: string) {
+  if (!SAFE.test(projectSlug) || !SAFE.test(chapterSlug)) return null;
+  const file = path.join(ROOT, projectSlug, `${chapterSlug}.md`);
   if (!fs.existsSync(file)) return null;
   const { data, content } = matter(fs.readFileSync(file, "utf8"));
   return {
