@@ -7,8 +7,13 @@ summary: Analyzing checkout bottlenecks, lost revenue, and staffing allocation i
 
 The **Piterets** retail chain faces classic high-volume supermarket bottlenecks at the checkout interface. Evaluating the network involves examining:
 * **Checkout Process Mapping (A16):** Visualizing the step-by-step transaction flow involving customer arrival, barcode scanning, cash/card payment processing, receipt generation, and purchase completion managed by cashiers and head cashiers.
+![Checkout Process Mapping (A16)](/piterest-retail-a16.jpg)
+
 * **Problem Field Evaluation:** Pinpointing root causes of financial leakage, customer churn, and resource misallocation.
+![Problem Field Evaluation](/piterest-retail-factors.jpg)
+
 * **Organizational Change Framework:** Structuring targeted interventions to optimize staff scheduling and queue length.
+![Organizational Change Framework](/piterest-retail-problems.jpg)
 
 ---
 

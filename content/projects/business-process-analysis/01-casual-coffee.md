@@ -13,7 +13,6 @@ When evaluating the operational environment of the **Casual** coffee shop, we an
 * **Factor Relationship Mapping:** Examining top-down dependencies between financial metrics (EBITDA, expected revenue), customer satisfaction (assortment breadth, average ticket size), internal business processes (margin management, store standards), and personnel training.
 ![Factor Relationship Model](/casual-coffee-factors.jpg)
 
-![Problem Field Matrix](/casual-coffee-problems.jpg)
 * **Problem Field Matrix:** Structuring systemic vulnerabilities across four key pillars: **Finance, Market, Processes, and Personnel**.
 ![Problem Field Matrix](/casual-coffee-problems.jpg)
 
