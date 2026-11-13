@@ -45,7 +45,7 @@ export const journey = [
 export type Project = {
   name: string;
   group: string;
-  area: "Economics" | "Finance" | "Management" | "Quantitative" | "Entrepreneurship";
+  area: "Analytics" | "Engineering" | "Management" | "Strategy" | "Operations";
   blurb: string;
   takeaway?: string; // optional: one line you want to remember
   code?: string;
@@ -53,19 +53,24 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  { name: "Business Process analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
+  { 
+    name: "Business Process Analysis", 
+    group: "Operational Analytics & Systems", 
+    area: "Operations", 
+    blurb: "Diagnosing problem fields, process bottlenecks, and operational inefficiencies across retail, hospitality, and manufacturing sectors using BPMN and factor mapping." 
+  },
 ];
 
-// Optional banner shown under a group title on the Subjects page.
+// Optional banner shown under a group title on the Projects page.
 export const programs: Record<
   string,
   { title: string; code: string; ects: number; text: string }
 > = {
-  "Erasmus · EPHEC": {
-    title: "Innovative International Entrepreneurship",
-    code: "ENT11",
-    ects: 30,
-    text: "Four 5-ECTS modules build the theory (strategy, case analysis, financial planning, trendwatching) to prepare a 10-ECTS international entrepreneurial project.",
+  "Operational Analytics & Systems": {
+    title: "Business Process Analysis & Optimization",
+    code: "BPA",
+    ects: 0, // Set to 0 or omit since it's a personal project
+    text: "An independent analytical portfolio examining operational workflows, financial risk exposure, and process reengineering across multiple business models.",
   },
 };
 
