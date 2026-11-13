@@ -36,7 +36,7 @@ export default async function SubjectLayout({
       <section className="bg-bain text-white">
         <div className="mx-auto max-w-6xl px-6 pb-12 pt-14 md:pb-16 md:pt-20">
           <Link href="/subjects" className="text-sm font-semibold text-white/80 hover:text-white">
-            ← All subjects
+            ← All projects
           </Link>
           <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-white/80">{meta}</p>
           <h1 className="mt-3 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
@@ -46,7 +46,7 @@ export default async function SubjectLayout({
         </div>
       </section>
       {chapters.length > 0 && (
-        <ChapterTabs base={`/subjects/${slug}`} chapters={chapters} />
+        <ChapterTabs base={`/projects/${slug}`} chapters={chapters} />
       )}
       {children}
     </>
