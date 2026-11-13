@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { subjects } from "@/data/content";
+import { projects } from "@/data/content";
 
 export const slugify = (s: string) =>
   s
@@ -10,7 +10,7 @@ export const slugify = (s: string) =>
     .replace(/^-+|-+$/g, "");
 
 export const subjectBySlug = (slug: string) =>
-  subjects.find((s) => slugify(s.name) === slug);
+  projects.find((s) => slugify(s.name) === slug);
 
 const ROOT = path.join(process.cwd(), "content", "projects");
 const SAFE = /^[a-z0-9_-]+$/i;

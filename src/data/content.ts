@@ -181,7 +181,7 @@ export const cases: Case[] = [
 // ── Home page stats (computed from the data above) ───────────
 export const stats = [
   { value: "3+", label: "Years of study" },
-  { value: String(subjects.length), label: "Projects" },
+  { value: String(projects.length), label: "Projects" },
   { value: String(cases.length), label: "Business cases" },
   { value: "C1", label: "English" },
 ];
