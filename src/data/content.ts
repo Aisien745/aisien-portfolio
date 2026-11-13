@@ -56,7 +56,7 @@ export const projects: Project[] = [
   },
 ];
 
-// Optional banner shown under a group title on the Projects page.
+// Optional banner srfsgsfdhown under a group title on the Projects page.
 export const programs: Record<
   string,
   { title: string; code: string; ects: number; text: string }
