@@ -1,11 +1,10 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-// Aliasing 'subjects' to 'projects' so you don't have to break your data file immediately
-import { programs, projects as projects } from "@/data/content";
+import { programs, projects, type Subject } from "@/data/content";
 import { getChapters, slugify } from "@/lib/projects";
 
-const groups = Array.from(new Set(projects.map((p) => p.group)));
+const groups = Array.from(new Set(projects.map((p: Subject) => p.group)));
 
 export const metadata = { title: "Projects | Aisien Solovev" };
 
@@ -14,8 +13,8 @@ export default function ProjectsPage() {
     <>
       <PageHeader
         eyebrow="Projects"
-        title="What I studied, and what stayed with me."
-        intro="Every course in the degree, grouped by stage. Open a project to read my notes chapter by chapter."
+        title="What I built, and what stayed with me."
+        intro="A collection of entrepreneurial projects, business models, and automated solutions. Open a project to read the documentation chapter by chapter."
       />
       <div className="mx-auto max-w-6xl px-6 py-20">
         {groups.map((g, gi) => {
@@ -47,7 +46,7 @@ export default function ProjectsPage() {
                 )}
               </Reveal>
               <div className="grid gap-6 md:grid-cols-2">
-                {projects.filter((p) => p.group === g).map((p, i) => {
+                {projects.filter((p: Subject) => p.group === g).map((p: Subject, i: number) => {
                   const slug = slugify(p.name);
                   const count = getChapters(slug).length;
                   return (
@@ -79,7 +78,7 @@ export default function ProjectsPage() {
                           </p>
                         )}
                         <span className="mt-auto pt-6 text-sm font-bold text-bain">
-                          {count > 0 ? `${count} chapters →` : "Notes coming soon"}
+                          {count > 0 ? `${count} chapters →` : "Details coming soon"}
                         </span>
                       </Link>
                     </Reveal>
