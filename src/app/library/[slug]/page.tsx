@@ -52,7 +52,7 @@ export default async function LibraryItemPage({ params }: PageProps) {
       </div>
 
       <header className="mb-10 border-b border-neutral-200 pb-8">
-        <div className="flex flex-wrap items-center gap-2 mb-4">
+        <div className="mb-4 flex flex-wrap items-center gap-2">
           <span className="bg-red-600 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
             {item.type}
           </span>
@@ -61,7 +61,7 @@ export default async function LibraryItemPage({ params }: PageProps) {
           </span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 leading-tight mb-3">
+        <h1 className="mb-3 text-3xl font-bold leading-tight tracking-tight text-neutral-900 md:text-4xl">
           {item.title}
         </h1>
         
@@ -77,15 +77,15 @@ export default async function LibraryItemPage({ params }: PageProps) {
       />
 
       {item.fileUrl && (
-        <div className="mt-12 pt-8 border-t border-neutral-200">
+        <div className="mt-16 border-t border-neutral-200 pt-10">
           <a
             href={item.fileUrl}
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-300 text-sm font-semibold text-neutral-700 transition hover:border-red-600 hover:text-red-600 hover:bg-red-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-700 transition hover:border-red-600 hover:bg-red-50 hover:text-red-600"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             Download Original PDF
