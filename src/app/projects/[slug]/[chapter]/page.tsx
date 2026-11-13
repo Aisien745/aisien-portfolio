@@ -5,14 +5,15 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
-import { subjects } from "@/data/content";
+// Aliasing 'subjects' to 'projects'
+import { subjects as projects } from "@/data/content"; 
 import { getChapter, getChapters, slugify } from "@/lib/subjects";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return subjects.flatMap((s) => {
-    const slug = slugify(s.name);
+  return projects.flatMap((p) => {
+    const slug = slugify(p.name);
     return getChapters(slug).map((c) => ({ slug, chapter: c.slug }));
   });
 }
@@ -51,13 +52,13 @@ export default async function ChapterPage({
 
       <nav className="mt-16 grid gap-4 border-t border-neutral-200 pt-8 sm:grid-cols-2">
         {prev ? (
-          <Link href={`/subjects/${slug}/${prev.slug}`} className="border border-neutral-200 p-5 transition hover:border-bain">
+          <Link href={`/projects/${slug}/${prev.slug}`} className="border border-neutral-200 p-5 transition hover:border-bain">
             <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">← Previous</span>
             <span className="mt-1 block font-bold">{prev.title}</span>
           </Link>
         ) : <span />}
         {next && (
-          <Link href={`/subjects/${slug}/${next.slug}`} className="border border-neutral-200 p-5 text-right transition hover:border-bain">
+          <Link href={`/projects/${slug}/${next.slug}`} className="border border-neutral-200 p-5 text-right transition hover:border-bain">
             <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">Next →</span>
             <span className="mt-1 block font-bold">{next.title}</span>
           </Link>
