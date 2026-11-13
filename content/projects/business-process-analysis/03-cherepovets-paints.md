@@ -13,7 +13,7 @@ The **Cherepovetskie Paints** manufacturing plant faces severe internal supply c
 ![Problem Field Identification](/Cherepovetskie-Paints-problems..jpg)
 
 * **Standardization & Training Framework:** Implementing corporate portal documentation, compliance testing, and training metrics. Cherepovetskie Paints framework.
-![Problem Field Identification](/Cherepovetskie-Paints-framework.jpg)
+![Standardization & Training Framework](/Cherepovetskie-Paints-framework.jpg)
 
 ---
 
