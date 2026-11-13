@@ -42,7 +42,7 @@ export const journey = [
 // order they first show up in this list).
 // The chapters of each subject are Markdown files in
 //   content/subjects/<subject-name-in-lowercase-with-dashes>/
-export type Subject = {
+export type Project = {
   name: string;
   group: string;
   area: "Economics" | "Finance" | "Management" | "Quantitative" | "Entrepreneurship";
@@ -52,7 +52,7 @@ export type Subject = {
   ects?: number;
 };
 
-export const projects: Subject[] = [
+export const projects: Project[] = [
   // Erasmus at EPHEC: Innovative International Entrepreneurship (ENT11)
   { name: "Strategic Management", group: "Erasmus · EPHEC", area: "Management", code: "ERA108", ects: 5, blurb: "How firms build and sustain competitive advantage." }, // EDIT
   { name: "Business Case Studies Analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
