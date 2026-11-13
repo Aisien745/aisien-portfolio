@@ -35,13 +35,8 @@ export const journey = [
     title: "Entrepreneurship",
     text: "Exchange at EPHEC: strategy, financial planning, trendwatching and an international entrepreneurial project.",
   },
-]; // EDIT
+]; 
 
-// ── Subjects ─────────────────────────────────────────────────
-// `group` decides the section on the Subjects page (groups appear in the
-// order they first show up in this list).
-// The chapters of each subject are Markdown files in
-//   content/subjects/<subject-name-in-lowercase-with-dashes>/
 export type Project = {
   name: string;
   group: string;
@@ -69,7 +64,7 @@ export const programs: Record<
   "Operational Analytics & Systems": {
     title: "Business Process Analysis & Optimization",
     code: "BPA",
-    ects: 0, // Set to 0 or omit since it's a personal project
+    ects: 0, 
     text: "An independent analytical portfolio examining operational workflows, financial risk exposure, and process reengineering across multiple business models.",
   },
 };
