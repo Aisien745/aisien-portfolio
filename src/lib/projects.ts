@@ -12,7 +12,7 @@ export const slugify = (s: string) =>
 export const subjectBySlug = (slug: string) =>
   subjects.find((s) => slugify(s.name) === slug);
 
-const ROOT = path.join(process.cwd(), "content", "subjects");
+const ROOT = path.join(process.cwd(), "content", "projects");
 const SAFE = /^[a-z0-9_-]+$/i;
 
 export type Chapter = { slug: string; title: string };

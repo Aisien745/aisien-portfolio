@@ -6,8 +6,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 // Aliasing 'subjects' to 'projects'
-import { subjects as projects } from "@/data/content"; 
-import { getChapter, getChapters, slugify } from "@/lib/subjects";
+import { projects as projects } from "@/data/content"; 
+import { getChapter, getChapters, slugify } from "@/lib/projects";
 
 export const dynamicParams = false;
 

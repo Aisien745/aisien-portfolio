@@ -52,7 +52,7 @@ export type Subject = {
   ects?: number;
 };
 
-export const subjects: Subject[] = [
+export const projects: Subject[] = [
   // Erasmus at EPHEC: Innovative International Entrepreneurship (ENT11)
   { name: "Strategic Management", group: "Erasmus · EPHEC", area: "Management", code: "ERA108", ects: 5, blurb: "How firms build and sustain competitive advantage." }, // EDIT
   { name: "Business Case Studies Analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
@@ -181,7 +181,7 @@ export const cases: Case[] = [
 // ── Home page stats (computed from the data above) ───────────
 export const stats = [
   { value: "3+", label: "Years of study" },
-  { value: String(subjects.length), label: "Subjects" },
+  { value: String(subjects.length), label: "Projects" },
   { value: String(cases.length), label: "Business cases" },
   { value: "C1", label: "English" },
 ];

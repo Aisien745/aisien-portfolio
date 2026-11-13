@@ -2,8 +2,8 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 // Aliasing 'subjects' to 'projects' so you don't have to break your data file immediately
-import { programs, subjects as projects } from "@/data/content";
-import { getChapters, slugify } from "@/lib/subjects";
+import { programs, projects as projects } from "@/data/content";
+import { getChapters, slugify } from "@/lib/projects";
 
 const groups = Array.from(new Set(projects.map((p) => p.group)));
 
