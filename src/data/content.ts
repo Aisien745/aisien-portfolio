@@ -55,7 +55,7 @@ export type Project = {
 export const projects: Project[] = [
   // Erasmus at EPHEC: Innovative International Entrepreneurship (ENT11)
   { name: "Strategic Management", group: "Erasmus · EPHEC", area: "Management", code: "ERA108", ects: 5, blurb: "How firms build and sustain competitive advantage." }, // EDIT
-  { name: "Business Case Studies Analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
+  { name: "Business Process analysis", group: "Erasmus · EPHEC", area: "Management", code: "ERA109", ects: 5, blurb: "Structuring real business problems and defending a recommendation." }, // EDIT
   { name: "Financial Plan", group: "Erasmus · EPHEC", area: "Finance", code: "ERA104", ects: 5, blurb: "Turning a business idea into numbers: forecasts, funding, viability." }, // EDIT
   { name: "Trendwatching", group: "Erasmus · EPHEC", area: "Management", code: "ERA120", ects: 5, blurb: "Spotting the megatrends reshaping the world and what they mean for business." }, // EDIT
   { name: "International Innovative Entrepreneurial Project", group: "Erasmus · EPHEC", area: "Entrepreneurship", code: "ERA116", ects: 10, blurb: "Building an international business project with a net positive societal impact." }, // EDIT
