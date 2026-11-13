@@ -6,8 +6,14 @@ summary: Comprehensive diagnosis of financial, market, and process vulnerabiliti
 ## 01. Overview & Context
 
 When evaluating the operational environment of the **Casual** coffee shop, we analyze three distinct diagnostic perspectives:
+
+![Coffee Preparation Process A15](/casual-coffee-a15.png)
 * **Visual Process Analysis (A15):** Tracing the barista’s workflow—from receiving customer orders, routing between Americano and Cappuccino preparation, coffee serving, and machine flushing to final order delivery.
+
+![Factor Relationship Model](/casual-coffee-factors.png)
 * **Factor Relationship Mapping:** Examining top-down dependencies between financial metrics (EBITDA, expected revenue), customer satisfaction (assortment breadth, average ticket size), internal business processes (margin management, store standards), and personnel training.
+
+![Problem Field Matrix](/casual-coffee-problems.png)
 * **Problem Field Matrix:** Structuring systemic vulnerabilities across four key pillars: **Finance, Market, Processes, and Personnel**.
 
 Based on structural clarity and direct impact assessment, the **Problem Field Matrix** provides the most actionable foundation for strategic intervention.
