@@ -7,8 +7,13 @@ summary: Resolving inventory chaos, supply chain friction, and warehouse process
 
 The **Cherepovetskie Paints** manufacturing plant faces severe internal supply chain and warehouse management friction. The analysis focuses on:
 * **Inventory Audit BPMN Workflow (A4):** Mapping monthly stock verification cycles executed by warehouse keepers (ERP stock reconciliation, physical counting, discrepancy logging, and quality reporting sent to the Quality Director).
+![Inventory Audit BPMN Workflow (A4)](/Cherepovetskie-Paints-bpmn.jpg)
+
 * **Problem Field Identification:** Examining market seasonality, raw material import sanctions, warehouse disorganization, and internal resistance to change.
-* **Standardization & Training Framework:** Implementing corporate portal documentation, compliance testing, and training metrics.
+![Problem Field Identification](/Cherepovetskie-Paints-problems..jpg)
+
+* **Standardization & Training Framework:** Implementing corporate portal documentation, compliance testing, and training metrics. Cherepovetskie Paints framework.
+![Problem Field Identification](/Cherepovetskie-Paints-framework.jpg)
 
 ---
 
