@@ -69,7 +69,7 @@ export const programs: Record<
   },
 };
 
-// ── Library ─────────────────────────────────────────лтдлотдлт─────────
+// ── Library ─────────────────────────────────────────лтдлотдлтй─────────
 export type Reading = {
   slug: string;
   title: string;
