@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { profile, journey, stats, subjects, library, cases } from "@/data/content";
+import { profile, journey, stats, projects, library, cases } from "@/data/content";
 
 const sections = [
-  { href: "/subjects", label: "Subjects", count: subjects.length, text: "What I studied, year by year, and the idea I took from each course." },
+  { href: "/subjects", label: "Subjects", count: projects.length, text: "What I studied, year by year, and the idea I took from each course." },
   { href: "/library", label: "Library", count: library.length, text: "Books, papers and reports that shaped how I think." },
   { href: "/cases", label: "Business Cases", count: cases.length, text: "Real problems where I applied theory with data and code." },
 ];
