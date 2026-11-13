@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: PageProps) {
   const item = library.find((p) => p.slug === itemSlug);
   if (!item) return { title: "Not Found" };
   
-  // If it's a chapter, add the chapter title to metadata
   if (slug.length === 2) {
       const chapterData = getLibraryChapter(itemSlug, slug[1]);
       if (chapterData) return { title: `${chapterData.title} | ${item.title}` };
@@ -41,7 +40,6 @@ export default async function LibraryItemPage({ params }: PageProps) {
 
   const chapters = getLibraryChapters(itemSlug);
 
-  // If this is a folder (book with chapters) but the user didn't specify a chapter, redirect to the first one
   if (chapters.length > 0 && !chapterSlug) {
       redirect(`/library/${itemSlug}/${chapters[0].slug}`);
   }
@@ -53,7 +51,6 @@ export default async function LibraryItemPage({ params }: PageProps) {
 
   try {
     if (chapterSlug) {
-        // Handle Chapter Logic
         const chapterData = getLibraryChapter(itemSlug, chapterSlug);
         if (!chapterData) notFound();
         
@@ -65,7 +62,6 @@ export default async function LibraryItemPage({ params }: PageProps) {
         nextChapter = chapters[i + 1];
         
     } else {
-        // Handle Single Paper Logic
         const filePath = path.join(process.cwd(), "content", "library", `${itemSlug}.md`);
         if (fs.existsSync(filePath)) {
           const fileFile = fs.readFileSync(filePath, "utf8");
@@ -88,7 +84,7 @@ export default async function LibraryItemPage({ params }: PageProps) {
         </Link>
       </div>
 
-      <header className="mb-10 border-b border-neutral-200 pb-8">
+      <header className="mb-6 border-b border-neutral-200 pb-8">
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <span className="bg-red-600 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
             {item.type}
@@ -107,20 +103,46 @@ export default async function LibraryItemPage({ params }: PageProps) {
         </p>
       </header>
 
-      {/* If it's a chapter, show the chapter title */}
+      {/* Pinned Chapter Navigation Tabs */}
+      {chapters.length > 0 && (
+        <div className="sticky top-0 z-10 -mx-6 mb-10 overflow-x-auto border-b border-neutral-200 bg-white/90 px-6 backdrop-blur-md">
+          <nav className="flex w-full min-w-max gap-8">
+            {chapters.map((chap, idx) => {
+              const isActive = chap.slug === chapterSlug;
+              return (
+                <Link
+                  key={chap.slug}
+                  href={`/library/${itemSlug}/${chap.slug}`}
+                  className={`flex items-center gap-2 whitespace-nowrap border-b-2 py-4 text-sm font-semibold transition-colors ${
+                    isActive
+                      ? "border-red-600 text-red-600"
+                      : "border-transparent text-neutral-500 hover:border-neutral-300 hover:text-neutral-800"
+                  }`}
+                >
+                  <span className={`text-xs font-bold ${isActive ? "opacity-100" : "opacity-50"}`}>
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  {chap.title}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      )}
+
+      {/* Main Content Area */}
       {currentChapterTitle && (
-          <h2 className="mt-8 mb-6 text-2xl font-extrabold tracking-tight md:text-3xl">
+          <h2 className="mb-6 mt-4 text-2xl font-extrabold tracking-tight md:text-3xl">
               {currentChapterTitle}
           </h2>
       )}
 
-      {/* Content Rendering */}
       <div 
-        className="prose prose-neutral max-w-none space-y-4 text-neutral-800 leading-relaxed"
+        className="prose prose-neutral max-w-none space-y-4 leading-relaxed text-neutral-800"
         dangerouslySetInnerHTML={{ __html: htmlContent || `<p>${item.note}</p>` }}
       />
 
-      {/* Chapter Navigation (Only shows if there are chapters) */}
+      {/* Bottom Chapter Navigation */}
       {chapters.length > 0 && (
           <nav className="mt-16 grid gap-4 border-t border-neutral-200 pt-8 sm:grid-cols-2">
             {prevChapter ? (
