@@ -17,12 +17,13 @@ export default function LibraryPage() {
         </p>
       </header>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-6">
         {library.map((item, idx) => (
           <div
             key={item.slug}
-            className="group flex flex-row items-start gap-6 md:gap-8 border-b border-neutral-200 py-8"
+            className="group flex flex-row items-start gap-6 md:gap-8 bg-white border border-neutral-200 p-6 md:p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-600/40 hover:shadow-xl"
           >
+
             {/* Left: Number */}
             <span className="shrink-0 pt-1 text-2xl font-bold text-red-600">
               {String(idx + 1).padStart(2, "0")}

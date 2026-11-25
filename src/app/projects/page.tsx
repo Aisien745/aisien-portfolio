@@ -53,8 +53,9 @@ export default function ProjectsPage() {
                     <Reveal key={p.name} delay={i * 0.08}>
                       <Link 
                         href={`/projects/${slug}`} 
-                        className="group flex h-full flex-col border border-neutral-200 p-7 transition hover:border-bain hover:shadow-lg"
+                        className="group flex h-full flex-col bg-white border border-neutral-200 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-bain hover:shadow-xl"
                       >
+
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="bg-bain-tint px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-bain">
                             {p.area}
@@ -70,7 +71,7 @@ export default function ProjectsPage() {
                             </span>
                           )}
                         </div>
-                        <h3 className="mt-4 text-xl font-extrabold tracking-tight">{p.name}</h3>
+                        <h3 className="mt-4 text-xl font-extrabold tracking-tight transition-colors group-hover:text-bain">{p.name}</h3>
                         <p className="mt-2 text-sm leading-relaxed text-neutral-600">{p.blurb}</p>
                         {p.takeaway && (
                           <p className="mt-5 border-l-4 border-bain pl-4 text-sm font-semibold italic text-neutral-800">
