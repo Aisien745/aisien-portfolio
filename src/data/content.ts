@@ -7,10 +7,10 @@
 export const profile = {
   name: "Aisien Solovev",
   initials: "AS",
-  degree: "BSc Economics & Management",
-  tagline: "From first-year theory to real-world decisions.",
+  degree: "Economics · Analytics · Strategy",
+  tagline: "Structuring complex problems. Backing decisions with data.",
   intro:
-    "A running record of my degree: what I studied, what I read, and how I applied it to real business problems.",
+    "Where economic theory meets Python engineering and consulting frameworks. A curated archive of business case teardowns, process architecture, and quantitative research.",
   email: "solovevaisien@gmail.com",
   linkedin: "https://www.linkedin.com/in/solovevaisien/",
   github: "https://github.com/aysiens",
@@ -21,19 +21,19 @@ export const profile = {
 // ── Journey (home page timeline) ─────────────────────────────
 export const journey = [
   {
-    year: "Year 1",
-    title: "Foundations",
-    text: "Micro and macroeconomics, accounting and statistics. Learning the language of markets and how to read a balance sheet.",
+    year: "01 · Foundations",
+    title: "Economic Lens",
+    text: "Microeconomics, macroeconomics, and financial accounting—learning how market structure, incentives, and balance sheets drive firm behavior.",
   },
   {
-    year: "Year 2",
-    title: "Tools",
-    text: "Corporate finance and Python. Moving from theory to evidence: data, models, valuation.",
+    year: "02 · Quantitative Stack",
+    title: "Data & Valuation",
+    text: "Corporate finance, statistics, and Python—moving from theory to evidence through pricing analytics, automated pipelines, and financial modeling.",
   },
   {
-    year: "Erasmus",
-    title: "Entrepreneurship",
-    text: "Exchange at EPHEC: strategy, financial planning, trendwatching and an international entrepreneurial project.",
+    year: "03 · Brussels & Beyond",
+    title: "Strategy & Execution",
+    text: "Consulting case teardowns, BPMN process reengineering, and international venture design—turning ambiguity into defensible recommendations.",
   },
 ]; 
 
