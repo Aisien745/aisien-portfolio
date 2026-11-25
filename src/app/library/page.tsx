@@ -17,11 +17,11 @@ export default function LibraryPage() {
         </p>
       </header>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         {library.map((item, idx) => (
           <div
             key={item.slug}
-            className="group flex flex-row items-start gap-6 md:gap-8 bg-white border border-neutral-200 p-6 md:p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-600/40 hover:shadow-xl"
+            className="group flex flex-row items-start gap-6 md:gap-8 bg-white rounded-3xl p-8 border border-neutral-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300"
           >
 
             {/* Left: Number */}

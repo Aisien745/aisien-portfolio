@@ -51,9 +51,10 @@ export default function ProjectsPage() {
                   const count = getChapters(slug).length;
                   return (
                     <Reveal key={p.name} delay={i * 0.08}>
+
                       <Link 
                         href={`/projects/${slug}`} 
-                        className="group flex h-full flex-col bg-white border border-neutral-200 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-bain hover:shadow-xl"
+                        className="group flex h-full flex-col bg-white rounded-3xl p-8 border border-neutral-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300"
                       >
 
                         <div className="flex flex-wrap items-center gap-2">
