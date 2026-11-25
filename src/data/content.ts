@@ -78,6 +78,7 @@ export type Reading = {
   theme: string;
   note: string;
   fileUrl?: string;
+  coverUrl?: string; // Optional: path to a cover image in /public
 };
 
 export const library: Reading[] = [
