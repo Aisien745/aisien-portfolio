@@ -47,7 +47,7 @@ Visual process mapping allows us to identify structural bottlenecks, workflow in
 
 ## 04. Client 3: Cherepovetskie Paints (Process A4)
 
-![Cherepovetskie Paints A4 Diagram](/Cherepovetskie%20Paints%20bpmn.jpg)
+![Cherepovetskie Paints A4 Diagram](/Cherepovetskie-Paints-bpmn.jpg)
 
 ### Visual Analysis & Identified Issues
 * **Redundant Actions:** The step *"Send a report on inventory results to the Quality Director"* duplicates reporting, since an identical report is already broadcasted to all interested stakeholders simultaneously.
