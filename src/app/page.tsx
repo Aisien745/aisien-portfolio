@@ -55,10 +55,10 @@ export default function Home() {
         <Reveal>
           <div className="mb-3 flex items-center gap-3">
             <span className="h-1 w-10 bg-bain" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-bain">My journey</span>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-bain">CORE CAPABILITIES</span>
           </div>
           <h2 className="max-w-2xl text-3xl font-extrabold tracking-tight md:text-5xl">
-            Three years, one thread: decisions backed by evidence.
+            From economic intuition to quantitative execution.
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-px bg-neutral-200 md:grid-cols-3">

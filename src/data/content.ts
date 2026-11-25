@@ -187,5 +187,5 @@ export const stats = [
   { value: "3+", label: "Years in Econ & Data" },
   { value: String(projects.length), label: "Projects" },
   { value: String(cases.length), label: "Business cases" },
-  { value: "C1", label: "English" },
+  { value: String(library.length), label: "Research notes" },
 ];
